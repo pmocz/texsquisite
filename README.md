@@ -1,6 +1,21 @@
-
-
 # texsquisite
+
+[![Repo Status][status-badge]][status-link]
+[![PyPI Version Status][pypi-badge]][pypi-link]
+[![Test Status][workflow-test-badge]][workflow-test-link]
+[![Readthedocs Status][docs-badge]][docs-link]
+[![License][license-badge]][license-link]
+
+[status-link]:         https://www.repostatus.org/#active
+[status-badge]:        https://www.repostatus.org/badges/latest/active.svg
+[pypi-link]:           https://pypi.org/project/texsquisite
+[pypi-badge]:          https://img.shields.io/pypi/v/texsquisite?label=PyPI&logo=pypi
+[workflow-test-link]:  https://github.com/texsquisiteProject/texsquisite/actions/workflows/test-package.yml
+[workflow-test-badge]: https://github.com/texsquisiteProject/texsquisite/actions/workflows/test-package.yml/badge.svg?event=push
+[docs-link]:           https://texsquisite.readthedocs.io
+[docs-badge]:          https://readthedocs.org/projects/texsquisite/badge
+[license-link]:        https://opensource.org/licenses/MIT
+[license-badge]:       https://img.shields.io/badge/MIT-blue.svg
 
 **`texsquisite`** is an linter for LaTeX that auto-formats code and fixes common typesetting mistakes.
 
