@@ -15,7 +15,7 @@
 [docs-link]:           https://texsquisite.readthedocs.io
 [docs-badge]:          https://readthedocs.org/projects/texsquisite/badge
 [license-link]:        https://opensource.org/licenses/MIT
-[license-badge]:       https://img.shields.io/badge/MIT-blue.svg
+[license-badge]:       https://img.shields.io/github/license/pmocz/texsquisite
 
 **`texsquisite`** is an linter for LaTeX that auto-formats code and fixes common typesetting mistakes.
 
