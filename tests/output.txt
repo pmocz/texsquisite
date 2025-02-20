@@ -1,11 +1,13 @@
 Fixable errors in tests/file1.tex:
   line 3: [S001] - line should not end with trailing whitespace
     hello world              % trailing whitespace  
+  line 11: [S004] - \footnote should not have space before it
+    hello \footnote{world}   % whitespace before footnote
 
 Fixable errors in tests/dir2/file2.tex:
   line 3: [S001] - line should not end with trailing whitespace
     hello world              % trailing whitespace  
 
 texsquisite: 2 files scanned.
-2 error(s) found, 2 of which are fixable.
+3 error(s) found, 3 of which are fixable with '--fix'.
 
