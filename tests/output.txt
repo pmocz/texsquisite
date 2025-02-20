@@ -1,0 +1,11 @@
+Fixable errors in tests/file1.tex:
+  line 3: [S001] - line should not end with trailing whitespace
+    hello world              % trailing whitespace  
+
+Fixable errors in tests/dir2/file2.tex:
+  line 3: [S001] - line should not end with trailing whitespace
+    hello world              % trailing whitespace  
+
+texsquisite: 2 files scanned.
+2 error(s) found, 2 of which are fixable.
+
