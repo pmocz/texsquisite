@@ -2,62 +2,7 @@ import sys
 import os
 import toml
 
-
-class Rule:
-    def __init__(self):
-        self.name = None
-        self.id = None
-        self.description = None
-        self.fixable = False
-
-    def print(self):
-        print(f"[{self.id}] {self.name}")
-        print(self.description)
-        print(f"fixable={self.fixable}\n")
-
-    def matches(self, line):
-        raise NotImplementedError
-
-    def fix(self, line):
-        raise NotImplementedError
-
-
-class TrailingWhitespace(Rule):
-    def __init__(self):
-        super().__init__()
-        self.name = "Trailing Whitespace"
-        self.id = "S001"
-        self.description = "line should not end with trailing whitespace"
-        self.fixable = True
-
-    def matches(self, line):
-        return line.endswith(" \n") or line.endswith("\t\n")
-
-    def fix(self, line):
-        return line.rstrip() + "\n"
-
-
-class Rules:
-    def __init__(self):
-        self.rules = {}
-
-    def add(self, rule):
-        self.rules[rule.id] = rule
-
-    def __iter__(self):
-        return iter(self.rules.values())
-
-    def __contains__(self, item):
-        return item in self.rules
-
-    def __getitem__(self, item):
-        return self.rules[item]
-
-
-class LatexRules(Rules):
-    def __init__(self):
-        super().__init__()
-        self.add(TrailingWhitespace())
+from .rules import LatexRules
 
 
 class Checker:
@@ -221,7 +166,9 @@ def run(argv=sys.argv):
     # Print summary
     print(f"texsquisite: {len(tex_files)} files scanned.")
     if num_errors:
-        print(f"{num_errors} error(s) found, {num_fixable} of which are fixable.")
+        print(
+            f"{num_errors} error(s) found, {num_fixable} of which are fixable with '--fix'."
+        )
         if fix:
             print(f"{num_fixable} error(s) were fixed!")
     else:
