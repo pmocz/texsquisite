@@ -1,0 +1,9 @@
+site_name: texsquisite
+site_url: https://texsquisite.readthedocs.io/
+site_description: A LaTex linter written in Python.
+site_author: Philip Mocz
+
+repo_url: https://github.com/pmocz/texsquisite
+
+theme:
+  name: material
