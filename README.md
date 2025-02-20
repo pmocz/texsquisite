@@ -10,8 +10,8 @@
 [status-badge]:        https://www.repostatus.org/badges/latest/active.svg
 [pypi-link]:           https://pypi.org/project/texsquisite
 [pypi-badge]:          https://img.shields.io/pypi/v/texsquisite?label=PyPI&logo=pypi
-[workflow-test-link]:  https://github.com/texsquisiteProject/texsquisite/actions/workflows/test-package.yml
-[workflow-test-badge]: https://github.com/texsquisiteProject/texsquisite/actions/workflows/test-package.yml/badge.svg?event=push
+[workflow-test-link]:  https://github.com/pmocz/texsquisite/actions/workflows/test-package.yml
+[workflow-test-badge]: https://github.com/pmocz/texsquisite/actions/workflows/test-package.yml/badge.svg?event=push
 [docs-link]:           https://texsquisite.readthedocs.io
 [docs-badge]:          https://readthedocs.org/projects/texsquisite/badge
 [license-link]:        https://opensource.org/licenses/MIT
