@@ -13,7 +13,7 @@ class Checker:
         self.rules = rules
 
     def check(self, fix):
-        new_file = []
+        corrected_tex = []
         # check for errors line-by-line, and apply fix when possible, if requested
         with open(self.file_name, "r") as file:
             for line_number, line in enumerate(file, 1):
@@ -22,17 +22,14 @@ class Checker:
                         if rule.fixable:
                             self.fixable_errors.append((line_number, rule.id, line))
                             if fix:
-                                new_file.append(rule.fix(line))
+                                line = rule.fix(line)
                         else:
                             self.unfixable_errors.append((line_number, rule.id, line))
-                            if fix:
-                                new_file.append(line)
-                    else:
-                        if fix:
-                            new_file.append(line)
+                if fix:
+                    corrected_tex.append(line)
         if fix:
             with open(self.file_name, "w") as file:
-                file.writelines(new_file)
+                file.writelines(corrected_tex)
         return len(self.fixable_errors), len(self.unfixable_errors)
 
     def print_errors(self):

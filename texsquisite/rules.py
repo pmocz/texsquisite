@@ -76,7 +76,7 @@ class Quotation(Rule):
 
     def fix(self, line):
         # TODO:
-        pass
+        return line
 
 
 class MissingTilde(Rule):
@@ -93,7 +93,7 @@ class MissingTilde(Rule):
 
     def fix(self, line):
         # TODO:
-        pass
+        return line
 
 
 class ExtraWhitespace(Rule):
@@ -110,7 +110,7 @@ class ExtraWhitespace(Rule):
 
     def fix(self, line):
         # TODO:
-        pass
+        return line
 
 
 class DoubleSpace(Rule):
@@ -127,7 +127,7 @@ class DoubleSpace(Rule):
 
     def fix(self, line):
         # TODO:
-        pass
+        return line
 
 
 class MathPunctuation(Rule):
@@ -146,4 +146,4 @@ class MathPunctuation(Rule):
 
     def fix(self, line):
         # TODO:
-        pass
+        return line
