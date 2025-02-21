@@ -1,4 +1,4 @@
 [check]
 file-extensions = ["tex"]
-ignore = ["S999"]
+ignore = ["X999"]
 exclude = ["file3.tex","dir4"]

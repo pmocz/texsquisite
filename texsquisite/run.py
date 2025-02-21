@@ -138,7 +138,7 @@ def run(argv=sys.argv):
                 if file.endswith("." + ext):
                     tex_files.append(os.path.join(root, file))
 
-    # Remove ignored files and directories
+    # Remove excluded files and directories
     for i in range(len(tex_files) - 1, -1, -1):
         file = tex_files[i].replace(os.getcwd(), "").strip("/")
         file_name = file.split("/")[-1]
@@ -149,6 +149,10 @@ def run(argv=sys.argv):
             for dir in exclude:
                 if dir in file_dirs:
                     tex_files.pop(i)
+
+    # Remove ignored rules from rule-set
+    for id in ignore:
+        rules.pop(id)
 
     # Check each file for errors
     num_errors = 0

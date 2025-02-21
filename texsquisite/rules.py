@@ -35,6 +35,11 @@ class Rules:
     def __getitem__(self, item):
         return self.rules[item]
 
+    def pop(self, item):
+        if item in self.rules:
+            return self.rules.pop(item)
+        return None
+
 
 class LatexRules(Rules):
     def __init__(self):
