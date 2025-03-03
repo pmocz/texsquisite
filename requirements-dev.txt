@@ -1,2 +1,2 @@
-black
+ruff
 pytest

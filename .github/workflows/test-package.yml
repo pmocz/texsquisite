@@ -30,10 +30,11 @@ jobs:
         python -m pip install -r requirements-dev.txt
         # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install .
-    - name: Lint with black
+    - name: Lint with ruff
       run: |
         cd ${{ github.workspace }}
-        black --check .
+        ruff format --check
+        ruff check
     - name: Test with pytest
       run: |
         pytest

@@ -4,12 +4,11 @@ import sys
 
 
 def test_texsquisite():
-
     # Create a StringIO object
     buffer = io.StringIO()
 
     # Redirect stdout to the buffer
-    original_stdout = sys.stdout
+    # original_stdout = sys.stdout
     sys.stdout = buffer
 
     # Run texsquite
