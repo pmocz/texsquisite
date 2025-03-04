@@ -1,6 +1,8 @@
 Fixable errors in tests/file1.tex:
   line 3: [S001] - line should not end with trailing whitespace
     hello world              % trailing whitespace  
+  line 10: [S003] - \ref should have ~ before it
+    hello \ref{world}        % missing `~'
   line 11: [S004] - \footnote should not have space before it
     hello \footnote{world}   % whitespace before footnote
 
@@ -9,5 +11,5 @@ Fixable errors in tests/dir2/file2.tex:
     hello world              % trailing whitespace  
 
 texsquisite: 2 files scanned.
-3 error(s) found, 3 of which are fixable with '--fix'.
+4 error(s) found, 4 of which are fixable with '--fix'.
 

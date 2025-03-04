@@ -1,4 +1,4 @@
-from .utils import strip_comments
+from .utils import remove_all_spaces_before, prepend
 
 
 class Rule:
@@ -93,12 +93,11 @@ class MissingTilde(Rule):
         self.fixable = True
 
     def matches(self, line):
-        # TODO:
-        pass
+        return r"\ref" in line and r"~\ref" not in line
 
     def fix(self, line):
-        # TODO:
-        return line
+        line = remove_all_spaces_before(r"\ref", line)
+        return prepend(r"~", r"\ref", line)
 
 
 class ExtraWhitespace(Rule):
@@ -110,12 +109,10 @@ class ExtraWhitespace(Rule):
         self.fixable = True
 
     def matches(self, line):
-        # if line contains \footnote, check if there is a space before it
-        return r" \footnote" in strip_comments(line)
+        return r" \footnote" in line or r"~\footnote" in line
 
     def fix(self, line):
-        # TODO:
-        return line
+        return remove_all_spaces_before(r"\footnote", line)
 
 
 class DoubleSpace(Rule):
