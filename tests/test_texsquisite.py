@@ -3,7 +3,7 @@ import io
 import sys
 
 
-def test_texsquisite():
+def test_texsquisite_check():
     # Create a StringIO object
     buffer = io.StringIO()
 
@@ -11,7 +11,7 @@ def test_texsquisite():
     # original_stdout = sys.stdout
     sys.stdout = buffer
 
-    # Run texsquite
+    # Run texsquisite check
     run(argv=["texsquisite.py", "check"])
     captured_output = buffer.getvalue()
 
@@ -19,3 +19,16 @@ def test_texsquisite():
         expected_output = file.read()
 
     assert captured_output == expected_output
+
+
+def test_texsquisite_check_fix():
+    # Run texsquisite check --fix
+    run(argv=["texsquisite.py", "check", "--fix"])
+
+    with open("tests/file1.tex", "r") as file:
+        output = file.read()
+
+    with open("tests/file1_fixed.tex", "r") as file:
+        expected_output = file.read()
+
+    assert output == expected_output
